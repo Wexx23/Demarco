@@ -1,36 +1,57 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# DeMarco — sajt
 
-## Getting Started
+Sajt za roštilj DeMarco: početna strana, meni sa cenovnikom i kontakt informacije.
+Napravljeno u [Next.js](https://nextjs.org) 16 (App Router), stilizovano sa Tailwind CSS 4.
 
-First, run the development server:
+## Pokretanje lokalno
+
+Potreban je [Node.js](https://nodejs.org) 20 ili noviji.
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Otvori [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Struktura projekta
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```
+app/
+  page.tsx              — početna strana
+  meni/page.tsx          — stranica sa cenovnikom
+  menu-data.ts            — SVE cene, stavke menija i kontakt podaci (adresa, telefoni, radno vreme)
+  components/             — komponente sajta (nav, hero, kontakt prozor, karusel ponude...)
+  globals.css             — boje, fontovi, animacije
+public/
+  jela/                   — fotografije jela za karusel "Naša ponuda"
+  galerija/                — fotografije za traku u sekciji "Iz naše kuhinje"
+```
 
-## Learn More
+### Izmena cena i menija
 
-To learn more about Next.js, take a look at the following resources:
+Sve cene i stavke se menjaju na jednom mestu: `app/menu-data.ts`. Odatle se
+automatski povlače i na stranicu `/meni` i u karusel na početnoj — nema
+opasnosti da se cene raziđu između te dve strane.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Dodavanje fotografije jela
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+1. Ubaci fotografiju u `public/jela/` (preporučeno: `.webp`, do ~150KB)
+2. U `app/menu-data.ts`, u `featured` nizu, dodaj `image: "/jela/ime-fajla.webp"` uz odgovarajuću stavku
 
-## Deploy on Vercel
+## Deploy (Netlify)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Projekat je podešen za Netlify (`netlify.toml`) — build komanda i Next.js
+plugin su već definisani, ništa dodatno ne treba podešavati u Netlify
+panelu osim povezivanja GitHub repozitorijuma.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Adresa sajta (za OG sliku pri deljenju linka) se čita automatski iz
+Netlify-jeve `URL` promenljive okruženja, ili ručno preko
+`NEXT_PUBLIC_SITE_URL` ako se hostuje negde drugde.
+
+## Tehnologije
+
+- Next.js 16 (App Router, Turbopack)
+- Tailwind CSS 4
+- Motion (Framer Motion) i GSAP ScrollSmoother — animacije i glatko skrolovanje
+- Swiper — karusel u sekciji "Naša ponuda"
