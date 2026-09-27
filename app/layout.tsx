@@ -8,7 +8,7 @@ import { SmoothScroll } from "./components/smooth-scroll";
 const anton = Anton({
   variable: "--font-anton",
   weight: "400",
-  subsets: ["latin"],
+  subsets: ["latin", "latin-ext"],
 });
 
 const spaceMono = Space_Mono({

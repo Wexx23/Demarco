@@ -2,6 +2,10 @@
 
 import Image from "next/image";
 import { useRef } from "react";
+import type { Swiper as SwiperClass } from "swiper";
+import { A11y, Keyboard } from "swiper/modules";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
 import { featured } from "../menu-data";
 import {
   CevapiIcon,
@@ -28,15 +32,7 @@ const icons = {
 };
 
 export function Menu() {
-  const trackRef = useRef<HTMLDivElement>(null);
-
-  const scroll = (dir: 1 | -1) => {
-    const el = trackRef.current;
-    const card = el?.firstElementChild as HTMLElement | undefined;
-    if (!el || !card) return;
-    const gap = parseFloat(getComputedStyle(el).columnGap) || 0;
-    el.scrollBy({ left: dir * (card.offsetWidth + gap), behavior: "smooth" });
-  };
+  const swiperRef = useRef<SwiperClass | null>(null);
 
   return (
     <section id="ponuda" className="px-6 py-16 md:px-10">
@@ -56,17 +52,28 @@ export function Menu() {
       </div>
 
       <Reveal>
-        <div
-          ref={trackRef}
-          className="flex snap-x snap-mandatory gap-5 overflow-x-auto scroll-smooth pb-2 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+        <Swiper
+          modules={[Keyboard, A11y]}
+          onSwiper={(swiper) => {
+            swiperRef.current = swiper;
+          }}
+          spaceBetween={20}
+          slidesPerView={1.28}
+          breakpoints={{
+            640: { slidesPerView: 2.2 },
+            768: { slidesPerView: 3.2 },
+          }}
+          keyboard={{ enabled: true }}
+          a11y={{
+            prevSlideMessage: "Prethodno jelo",
+            nextSlideMessage: "Sledeće jelo",
+          }}
+          className="!overflow-visible"
         >
           {featured.map(({ key, tagline, image, item }) => {
             const Icon = icons[key as keyof typeof icons];
             return (
-              <div
-                key={key}
-                className="w-[78%] shrink-0 snap-start sm:w-[45%] md:w-[31%]"
-              >
+              <SwiperSlide key={key} className="!h-auto">
                 <div className="flex h-full flex-col gap-5 rounded-3xl bg-cream-2 p-4">
                   <div className="relative flex aspect-[4/3] shrink-0 items-center justify-center overflow-hidden rounded-2xl bg-cream">
                     {image ? (
@@ -102,23 +109,24 @@ export function Menu() {
                     </div>
                   </div>
                 </div>
-              </div>
+              </SwiperSlide>
             );
           })}
-        </div>
+        </Swiper>
       </Reveal>
 
-      <div className="mt-6 flex items-center justify-between">
+      <div className="mt-6 flex items-center justify-between gap-4">
         <a
           href="/meni"
           className="inline-flex items-center gap-2 text-xs font-bold tracking-wide underline decoration-2 underline-offset-4 md:hidden"
         >
           VIDI MENI
         </a>
+
         <div className="ml-auto flex gap-2">
           <button
             type="button"
-            onClick={() => scroll(-1)}
+            onClick={() => swiperRef.current?.slidePrev()}
             aria-label="Prethodno"
             className="flex h-10 w-10 items-center justify-center rounded-full bg-ink text-cream transition-transform duration-150 active:scale-[0.94]"
           >
@@ -126,7 +134,7 @@ export function Menu() {
           </button>
           <button
             type="button"
-            onClick={() => scroll(1)}
+            onClick={() => swiperRef.current?.slideNext()}
             aria-label="Sledeće"
             className="flex h-10 w-10 items-center justify-center rounded-full bg-ink text-cream transition-transform duration-150 active:scale-[0.94]"
           >

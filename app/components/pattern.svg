@@ -16,9 +16,18 @@
     </g>
 
     <g id="pizza">
-      <path d="M16 2 29 26H3z" />
-      <path d="M3 26c4.5 3.5 21.5 3.5 26 0" />
-      <path d="M15 11.5a1.6 1.6 0 1 0 .01 0M11 19a1.6 1.6 0 1 0 .01 0M20.5 18a1.6 1.6 0 1 0 .01 0M16 23.5a1.3 1.3 0 1 0 .01 0" />
+      <path d="m12 14-1 1" />
+      <path d="m13.75 18.25-1.25 1.42" />
+      <path d="M17.775 5.654a15.68 15.68 0 0 0-12.121 12.12" />
+      <path d="M18.8 9.3a1 1 0 0 0 2.1 7.7" />
+      <path d="M21.964 20.732a1 1 0 0 1-1.232 1.232l-18-5a1 1 0 0 1-.695-1.232A19.68 19.68 0 0 1 15.732 2.037a1 1 0 0 1 1.232.695z" />
+    </g>
+
+    <g id="ham">
+      <path d="M13.144 21.144A7.274 10.445 45 1 0 2.856 10.856" />
+      <path d="M13.144 21.144A7.274 4.365 45 0 0 2.856 10.856a7.274 4.365 45 0 0 10.288 10.288" />
+      <path d="M16.565 10.435 18.6 8.4a2.501 2.501 0 1 0 1.65-4.65 2.5 2.5 0 1 0-4.66 1.66l-2.024 2.025" />
+      <path d="m8.5 16.5-1-1" />
     </g>
 
     <g id="cup">
@@ -59,7 +68,7 @@
 
   <g fill="none" stroke="#D9C89C" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
     <use href="#burger" transform="translate(26 22) rotate(-13) scale(1) translate(-16 -16)" />
-    <use href="#pizza" transform="translate(96 38) rotate(16) scale(.9) translate(-16 -16)" />
+    <use href="#pizza" transform="translate(96 38) rotate(16) scale(.9) translate(-12 -12)" />
     <use href="#cup" transform="translate(152 18) rotate(-9) scale(.95) translate(-16 -16)" />
     <use href="#cevapi" transform="translate(218 36) rotate(20) scale(.9) translate(-16 -16)" />
     <use href="#grill" transform="translate(276 20) rotate(-6) scale(.88) translate(-16 -16)" />
@@ -70,7 +79,7 @@
     <use href="#burger" transform="translate(220 100) rotate(9) scale(.86) translate(-16 -16)" />
     <use href="#cutlery" transform="translate(278 86) rotate(-12) scale(.9) translate(-16 -16)" />
 
-    <use href="#pizza" transform="translate(36 150) rotate(-20) scale(.95) translate(-16 -16)" />
+    <use href="#pizza" transform="translate(36 150) rotate(-20) scale(.95) translate(-12 -12)" />
     <use href="#cevapi" transform="translate(96 142) rotate(13) scale(.9) translate(-16 -16)" />
     <use href="#grill" transform="translate(150 160) rotate(5) scale(.85) translate(-16 -16)" />
     <use href="#cup" transform="translate(212 144) rotate(-14) scale(.9) translate(-16 -16)" />
@@ -80,7 +89,7 @@
     <use href="#burger" transform="translate(96 220) rotate(-9) scale(.94) translate(-16 -16)" />
     <use href="#cutlery" transform="translate(154 204) rotate(22) scale(.86) translate(-16 -16)" />
     <use href="#fries" transform="translate(216 216) rotate(-7) scale(.88) translate(-16 -16)" />
-    <use href="#pizza" transform="translate(274 206) rotate(11) scale(.9) translate(-16 -16)" />
+    <use href="#pizza" transform="translate(274 206) rotate(11) scale(.9) translate(-12 -12)" />
 
     <use href="#cevapi" transform="translate(34 274) rotate(-15) scale(.9) translate(-16 -16)" />
     <use href="#cup" transform="translate(94 266) rotate(9) scale(.9) translate(-16 -16)" />
@@ -92,10 +101,10 @@
     <use href="#cup" transform="translate(300 58) rotate(14) scale(.85) translate(-16 -16)" />
     <use href="#skewer" transform="translate(126 0) rotate(-22) scale(.88) translate(-16 -16)" />
     <use href="#skewer" transform="translate(126 300) rotate(-22) scale(.88) translate(-16 -16)" />
-    <use href="#pizza" transform="translate(300 244) rotate(-13) scale(.86) translate(-16 -16)" />
-    <use href="#pizza" transform="translate(0 244) rotate(-13) scale(.86) translate(-16 -16)" />
-    <use href="#cutlery" transform="translate(248 300) rotate(9) scale(.86) translate(-16 -16)" />
-    <use href="#cutlery" transform="translate(248 0) rotate(9) scale(.86) translate(-16 -16)" />
+    <use href="#pizza" transform="translate(300 244) rotate(-13) scale(.86) translate(-12 -12)" />
+    <use href="#pizza" transform="translate(0 244) rotate(-13) scale(.86) translate(-12 -12)" />
+    <use href="#ham" transform="translate(248 300) rotate(9) scale(.86) translate(-12 -12)" />
+    <use href="#ham" transform="translate(248 0) rotate(9) scale(.86) translate(-12 -12)" />
     <use href="#cevapi" transform="translate(62 0) rotate(17) scale(.85) translate(-16 -16)" />
     <use href="#cevapi" transform="translate(62 300) rotate(17) scale(.85) translate(-16 -16)" />
     <use href="#grill" transform="translate(0 130) rotate(-8) scale(.8) translate(-16 -16)" />
@@ -104,7 +113,7 @@
     <use href="#cutlery" transform="translate(62 56) rotate(24) scale(.72) translate(-16 -16)" />
     <use href="#fries" transform="translate(188 54) rotate(-19) scale(.74) translate(-16 -16)" />
     <use href="#cup" transform="translate(126 118) rotate(13) scale(.72) translate(-16 -16)" />
-    <use href="#pizza" transform="translate(250 122) rotate(-24) scale(.74) translate(-16 -16)" />
+    <use href="#pizza" transform="translate(250 122) rotate(-24) scale(.74) translate(-12 -12)" />
     <use href="#grill" transform="translate(60 182) rotate(7) scale(.7) translate(-16 -16)" />
     <use href="#skewer" transform="translate(188 178) rotate(21) scale(.74) translate(-16 -16)" />
     <use href="#burger" transform="translate(124 244) rotate(-21) scale(.74) translate(-16 -16)" />
