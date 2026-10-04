@@ -2,7 +2,7 @@ import { Reveal } from "./reveal";
 
 const paragraphs = [
   "Tradicija, kvalitet i meso bez kompromisa.",
-  "U gradu koji je kolevka dobrog roštilja, razliku čine detalji. U brzoj hrani DeMarco ne koristimo prečice – biramo isključivo najkvalitetnije meso domaćeg porekla i pripremamo ga na roštilju po proverenim receptima.",
+  "U gradu koji je kolevka dobrog roštilja, razliku čine detalji. U brzoj hrani DeMarco ne koristimo prečice, biramo isključivo najkvalitetnije meso domaćeg porekla i pripremamo ga na roštilju po proverenim receptima.",
   "Od sočnih ćevapa i gurmanske pljeskavice, pa sve do naših specijaliteta sa roštilja, svaki zalogaj donosi prepoznatljiv ukus po kom je Leskovac poznat širom sveta. Naša misija je jednostavna: uvek sveža hrana i ukus zbog kog ćete nam se uvek vraćati.",
 ];
 

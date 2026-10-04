@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { contact } from "../menu-data";
-import { ArrowIcon, CutleryMark, FacebookIcon, InstagramIcon } from "./icons";
+import { CutleryMark, FacebookIcon, InstagramIcon } from "./icons";
 
 export function Footer() {
   return (
@@ -12,16 +12,6 @@ export function Footer() {
         </div>
 
         <div className="flex flex-col gap-2 text-xs font-bold tracking-wide text-cream/80">
-          <a
-            href={contact.mapsUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Navigacija do DeMarca na Google mapama"
-            className="mb-1 inline-flex w-fit items-center gap-1 text-cream/70 transition-colors duration-150 hover:text-yellow"
-          >
-            NAVIGACIJA
-            <ArrowIcon className="h-3 w-3" />
-          </a>
           <Link href="/" className="w-fit transition-colors duration-150 hover:text-yellow">
             POČETNA
           </Link>
