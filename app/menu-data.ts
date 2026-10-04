@@ -340,7 +340,7 @@ export const contact = {
     { label: "060 540 64 18", href: "tel:+381605406418" },
     { label: "069 181 79 22", href: "tel:+381691817922" },
   ],
-  delivery: "Besplatna dostava na kućnu adresu",
+  delivery: "Besplatna dostava na kućnu adresu u Leskovcu",
   catering:
     "Priprema biznis keteringa, kao i keteringa za sve vrste promocija, proslava, slava, parastosa...",
 };

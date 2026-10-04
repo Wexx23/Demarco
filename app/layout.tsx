@@ -36,7 +36,7 @@ const siteUrl =
     ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
     : "http://localhost:3000");
 const description =
-  "Domaći roštilj, ćevapi i pljeskavice po porodičnim receptima. Ančiki, Tome Kostića bb — besplatna dostava na kućnu adresu.";
+  "Domaći roštilj, ćevapi i pljeskavice po porodičnim receptima. Ančiki, Tome Kostića bb — besplatna dostava na kućnu adresu u Leskovcu.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
