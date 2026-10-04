@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { contact } from "../menu-data";
-import { CutleryMark, InstagramIcon } from "./icons";
+import { ArrowIcon, CutleryMark, FacebookIcon, InstagramIcon } from "./icons";
 
 export function Footer() {
   return (
@@ -12,7 +12,16 @@ export function Footer() {
         </div>
 
         <div className="flex flex-col gap-2 text-xs font-bold tracking-wide text-cream/80">
-          <span className="mb-1 text-cream/70">NAVIGACIJA</span>
+          <a
+            href={contact.mapsUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Navigacija do DeMarca na Google mapama"
+            className="mb-1 inline-flex w-fit items-center gap-1 text-cream/70 transition-colors duration-150 hover:text-yellow"
+          >
+            NAVIGACIJA
+            <ArrowIcon className="h-3 w-3" />
+          </a>
           <Link href="/" className="w-fit transition-colors duration-150 hover:text-yellow">
             POČETNA
           </Link>
@@ -49,15 +58,23 @@ export function Footer() {
               {p.label}
             </a>
           ))}
-          <a
-            href={contact.instagram}
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="DeMarco na Instagramu"
-            className="mt-1 flex h-9 w-9 items-center justify-center rounded-full border border-cream/20 transition-colors duration-150 hover:border-yellow hover:text-yellow"
-          >
-            <InstagramIcon className="h-4 w-4" />
-          </a>
+          <div className="mt-1 flex gap-2">
+            {[
+              { href: contact.instagram, label: "DeMarco na Instagramu", Icon: InstagramIcon },
+              { href: contact.facebook, label: "DeMarco na Facebooku", Icon: FacebookIcon },
+            ].map(({ href, label, Icon }) => (
+              <a
+                key={href}
+                href={href}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={label}
+                className="flex h-9 w-9 items-center justify-center rounded-full border border-cream/20 transition-colors duration-150 hover:border-yellow hover:text-yellow"
+              >
+                <Icon className="h-4 w-4" />
+              </a>
+            ))}
+          </div>
         </div>
       </div>
 

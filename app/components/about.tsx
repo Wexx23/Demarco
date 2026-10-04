@@ -1,11 +1,9 @@
 import { Reveal } from "./reveal";
 
 const paragraphs = [
-  "PRE SVEGA, LJUBAV PREMA VATRI, MESU I POŠTENOM ZANATU KOJI SE PRENOSI GENERACIJAMA.",
-  "SVE JE POČELO JEDNIM ROŠTILJEM U DVORIŠTU, MNOGO PRE NEGO ŠTO JE DEMARCO DOBIO IME I ADRESU.",
-  "OD TADA, SVAKI KOMAD MESA NOSI ISTU POTREBU DA BUDE STVARNO DOBAR, NE SAMO DOVOLJNO DOBAR.",
-  "ZATO NE PRAVIMO OBIČAN ROŠTILJ. VEĆ MALU KUHINJU U KOJOJ SE SPAJAJU DOMAĆI RECEPTI I LIČNI STANDARDI.",
-  "U SVETU GDE JE SVE BRZO I ISTO, KOD NAS STVARI IMAJU TEŽINU JER NA KRAJU NIJE BITNO ŠTA JEDEŠ, VEĆ DA LI ĆEŠ SE VRATITI.",
+  "Tradicija, kvalitet i meso bez kompromisa.",
+  "U gradu koji je kolevka dobrog roštilja, razliku čine detalji. U brzoj hrani DeMarco ne koristimo prečice – biramo isključivo najkvalitetnije meso domaćeg porekla i pripremamo ga na roštilju po proverenim receptima.",
+  "Od sočnih ćevapa i gurmanske pljeskavice, pa sve do naših specijaliteta sa roštilja, svaki zalogaj donosi prepoznatljiv ukus po kom je Leskovac poznat širom sveta. Naša misija je jednostavna: uvek sveža hrana i ukus zbog kog ćete nam se uvek vraćati.",
 ];
 
 export function About() {
@@ -23,7 +21,7 @@ export function About() {
         <div className="space-y-5">
           {paragraphs.map((p, i) => (
             <Reveal key={p} delay={0.05 * i}>
-              <p className="text-sm font-bold leading-relaxed tracking-wide text-cream/90">
+              <p className="text-sm font-bold uppercase leading-relaxed tracking-wide text-cream/90">
                 {p}
               </p>
             </Reveal>

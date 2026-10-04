@@ -333,6 +333,7 @@ export const contact = {
   address: "Ančiki, Tome Kostića bb",
   mapsUrl: "https://maps.app.goo.gl/Bgu69aFMQgALYogi6",
   instagram: "https://www.instagram.com/de_marco_mmc/",
+  facebook: "https://www.facebook.com/p/DeMarco-Leskovac-100068604607314/",
   hours: "Ponedeljak - Subota 08.00 - 23.00",
   closed: "Nedeljom ne radimo",
   phones: [
