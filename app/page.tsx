@@ -1,5 +1,4 @@
 import { About } from "./components/about";
-import { BigWordmark } from "./components/big-wordmark";
 import { CTA } from "./components/cta";
 import { Features } from "./components/features";
 import { Footer } from "./components/footer";
@@ -17,7 +16,6 @@ export default function Home() {
         <Menu />
         <Gallery />
         <CTA />
-        <BigWordmark />
       </main>
       <Footer />
     </div>

@@ -28,13 +28,13 @@ export function Hero() {
       <div className="flex flex-col gap-8">
         <Reveal>
           <h1 className="font-display text-5xl leading-[0.95] tracking-tight md:text-6xl">
-            MESO SA ŽARA, PRIČA SA STAVOM.
+            MESO SA ROŠTILJA, PRIČA SA STAVOM.
           </h1>
         </Reveal>
 
         <Reveal delay={0.1}>
           <p className="max-w-md text-sm font-bold uppercase tracking-wide text-ink-soft">
-            Porodični roštilj i ćevapi po receptu koji se ne menja.
+            Porodični roštilj po receptu koji se ne menja.
           </p>
         </Reveal>
 

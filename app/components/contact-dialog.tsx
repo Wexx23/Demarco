@@ -74,7 +74,7 @@ export function ContactDialog() {
                   <div className="mb-5 flex items-start justify-between gap-4">
                     <div>
                       <p className="text-[10px] font-bold tracking-[0.2em] text-ink-soft/60">
-                        [ PORUČI ]
+                        PORUČI
                       </p>
                       <h2 className="mt-2 font-display text-3xl leading-none tracking-tight">
                         POZOVI NAS

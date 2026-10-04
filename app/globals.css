@@ -15,8 +15,22 @@
   --color-yellow: var(--color-yellow);
   --color-ink: var(--color-ink);
   --color-ink-soft: var(--color-ink-soft);
-  --font-display: var(--font-anton);
-  --font-mono: var(--font-space-mono);
+  --font-display: var(--font-karma);
+  --font-sans: var(--font-inter);
+}
+
+@layer base {
+  /* Display text defaults to Karma Bold; font-* weight utilities still override. */
+  .font-display {
+    font-weight: 700;
+  }
+}
+
+/* Every h1–h6 uses DeMarco Display. Unlayered so it wins over the
+   font-display utility; single weight, so no faux bold. */
+:where(h1, h2, h3, h4, h5, h6) {
+  font-family: var(--font-demarco), sans-serif;
+  font-weight: 400;
 }
 
 body {

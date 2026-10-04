@@ -13,7 +13,7 @@ export function About() {
     <section className="relative overflow-hidden bg-ink px-6 py-20 text-cream md:px-10 md:py-28">
       <div className="relative mx-auto max-w-3xl">
         <Reveal>
-          <p className="mb-6 text-xs font-bold tracking-[0.2em] text-yellow">[ O NAMA ]</p>
+          <p className="mb-6 text-xs font-bold tracking-[0.2em] text-yellow">O NAMA</p>
         </Reveal>
         <Reveal delay={0.1}>
           <h2 className="mb-10 font-display text-4xl leading-[0.95] tracking-tight text-yellow md:text-5xl">

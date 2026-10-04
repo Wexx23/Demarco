@@ -1,20 +1,32 @@
 import type { Metadata } from "next";
-import { Anton, Space_Mono } from "next/font/google";
+import { Inter } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
 import AgentationToolbar from "./agentation-toolbar";
 import { Nav } from "./components/nav";
 import { SmoothScroll } from "./components/smooth-scroll";
 
-const anton = Anton({
-  variable: "--font-anton",
-  weight: "400",
-  subsets: ["latin", "latin-ext"],
+// Karma (Indian Type Foundry, Fontshare) — OFL, see app/fonts/Karma-OFL.txt
+const karma = localFont({
+  src: "./fonts/Karma-Variable.woff2",
+  variable: "--font-karma",
+  weight: "300 700",
+  display: "swap",
 });
 
-const spaceMono = Space_Mono({
-  variable: "--font-space-mono",
-  weight: ["400", "700"],
-  subsets: ["latin"],
+// DeMarco Display = Changa One (Eduardo Tunni, OFL) + č ć đ Č Ć Đ,
+// renamed as the OFL requires. See app/fonts/DeMarcoDisplay-OFL.txt
+const demarcoDisplay = localFont({
+  src: "./fonts/DeMarcoDisplay-Regular.woff2",
+  variable: "--font-demarco",
+  weight: "400",
+  display: "swap",
+});
+
+const inter = Inter({
+  variable: "--font-inter",
+  subsets: ["latin", "latin-ext"],
+  axes: ["opsz"],
 });
 
 const siteUrl =
@@ -49,9 +61,9 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="sr"
-      className={`${anton.variable} ${spaceMono.variable} h-full antialiased`}
+      className={`${karma.variable} ${demarcoDisplay.variable} ${inter.variable} h-full antialiased`}
     >
-      <body className="min-h-full bg-cream text-ink font-mono">
+      <body className="min-h-full bg-cream text-ink font-sans">
         <Nav />
         <SmoothScroll>{children}</SmoothScroll>
         <AgentationToolbar />

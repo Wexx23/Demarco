@@ -10,7 +10,7 @@ export function Gallery() {
       <div className="px-6 md:px-10">
         <Reveal>
           <p className="mb-3 text-xs font-bold tracking-[0.2em] text-yellow">
-            [ KETERING ]
+            KETERING
           </p>
         </Reveal>
         <Reveal delay={0.1}>

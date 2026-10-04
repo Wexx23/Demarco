@@ -5,12 +5,12 @@ export function CTA() {
   return (
     <section
       id="kontakt"
-      className="bg-ink-soft px-6 py-20 text-cream md:px-10 md:py-28"
+      className="px-6 py-20 text-cream md:px-10 md:py-28 bg-[hsl(36,_27.78%,_7.06%)]"
     >
       <div>
           <Reveal>
             <p className="mb-5 font-display text-2xl tracking-tight text-yellow md:text-3xl">
-              MESO SA STAVOM.
+              UKUS KOJI SE PAMTI.
             </p>
           </Reveal>
           <Reveal delay={0.1}>

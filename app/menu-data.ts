@@ -38,7 +38,7 @@ export const menu: MenuSection[] = [
         unit: "350 g",
         price: 500,
       },
-      { name: "Ćevapi", unit: "300 g", price: 500 },
+      { name: "Ćevapi", unit: "10 kom. · 300 g", price: 500 },
       { name: "Punjeni ćevap DeMarco", unit: "350 g", price: 470 },
       { name: "Uštipci", unit: "10 kom.", price: 500 },
       { name: "Domaća kobasica", unit: "700 g", price: 800 },
@@ -289,32 +289,32 @@ export const featured: {
   {
     key: "raznjic",
     tagline: "Sočan, pečen na roštilju",
+    image: "/jela/raznjic.webp",
     item: pick("rostilj", "Svinjski ražnjić"),
   },
   {
     key: "ustipci",
     tagline: "Prženi, hrskavi spolja",
+    image: "/jela/ustipci.webp",
     item: pick("rostilj", "Uštipci"),
   },
   {
     key: "mesano",
     tagline: "Sve sa roštilja na jednom tanjiru",
+    image: "/jela/mesano.webp",
     item: pick("rostilj", "Mešano meso", "380 g"),
   },
   {
     key: "kobasica",
     tagline: "Po porodičnom receptu",
+    image: "/jela/kobasica.webp",
     item: pick("rostilj", "Domaća kobasica"),
   },
   {
     key: "pizza",
     tagline: "Kuća specijal, mala i velika",
+    image: "/jela/pizza.webp",
     item: pick("pizza", "Pizza DeMarco"),
-  },
-  {
-    key: "pomfrit",
-    tagline: "Uz svako jelo",
-    item: pick("salate", "Pomfrit veći"),
   },
 ];
 

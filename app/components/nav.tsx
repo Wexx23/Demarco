@@ -8,6 +8,9 @@ import { CutleryMark } from "./icons";
 
 const EASE_OUT: [number, number, number, number] = [0.16, 1, 0.3, 1];
 
+const pillClass =
+  "rounded-full border border-ink/20 px-4 py-2 text-xs font-bold tracking-wide text-ink transition-colors duration-200 hover:border-ink";
+
 const links = [
   { label: "POČETNA", href: "/" },
   { label: "MENI", href: "/meni" },
@@ -38,16 +41,10 @@ export function Nav() {
   return (
     <header className="fixed inset-x-0 top-0 z-40 h-[var(--nav-h)] border-b border-ink/10 bg-cream/90 backdrop-blur">
       <div className="relative flex h-full items-center justify-between gap-3 px-6 md:px-10">
-        <nav className="hidden items-center gap-2 md:flex">
-          {links.slice(0, 2).map(({ label, href }) => (
-            <Link
-              key={label}
-              href={href}
-              className="rounded-full border border-ink/20 px-4 py-2 text-xs font-bold tracking-wide text-ink transition-colors duration-200 hover:border-ink"
-            >
-              {label}
-            </Link>
-          ))}
+        <nav className="hidden flex-1 items-center gap-2 md:flex">
+          <Link href="/" className={pillClass}>
+            POČETNA
+          </Link>
         </nav>
 
         <Link
@@ -58,12 +55,17 @@ export function Nav() {
           DEMARCO
         </Link>
 
-        <a
-          href="#kontakt"
-          className="hidden rounded-full bg-yellow px-4 py-2 text-xs font-bold tracking-wide text-ink transition-[filter] duration-200 hover:brightness-95 md:inline-flex"
-        >
-          KONTAKT
-        </a>
+        <div className="hidden flex-1 items-center justify-end gap-2 md:flex">
+          <Link href="/meni" className={pillClass}>
+            MENI
+          </Link>
+          <a
+            href="#kontakt"
+            className="inline-flex rounded-full bg-yellow px-4 py-2 text-xs font-bold tracking-wide text-ink transition-[filter] duration-200 hover:brightness-95"
+          >
+            KONTAKT
+          </a>
+        </div>
 
         <button
           type="button"
@@ -147,9 +149,6 @@ export function Nav() {
                     {p.label}
                   </a>
                 ))}
-                <p className="text-[10px] font-bold uppercase tracking-wide text-ink-soft/60">
-                  {contact.address} · {contact.hours}
-                </p>
               </div>
             </motion.nav>
           )}

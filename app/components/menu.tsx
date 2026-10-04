@@ -12,7 +12,6 @@ import {
   KobasicaIcon,
   PizzaIcon,
   PljeskavicaIcon,
-  PomfritIcon,
   RaznjicIcon,
   RostiljIcon,
   UstipciIcon,
@@ -28,7 +27,6 @@ const icons = {
   mesano: RostiljIcon,
   kobasica: KobasicaIcon,
   pizza: PizzaIcon,
-  pomfrit: PomfritIcon,
 };
 
 export function Menu() {
@@ -57,31 +55,32 @@ export function Menu() {
           onSwiper={(swiper) => {
             swiperRef.current = swiper;
           }}
+          // Whole cards only; Swiper clips to its box so nothing peeks in
           spaceBetween={20}
-          slidesPerView={1.28}
+          slidesPerView={1}
           breakpoints={{
-            640: { slidesPerView: 2.2 },
-            768: { slidesPerView: 3.2 },
+            640: { slidesPerView: 2 },
+            1024: { slidesPerView: 3 },
           }}
           keyboard={{ enabled: true }}
           a11y={{
             prevSlideMessage: "Prethodno jelo",
             nextSlideMessage: "Sledeće jelo",
           }}
-          className="!overflow-visible"
         >
           {featured.map(({ key, tagline, image, item }) => {
             const Icon = icons[key as keyof typeof icons];
             return (
               <SwiperSlide key={key} className="!h-auto">
                 <div className="flex h-full flex-col gap-5 rounded-3xl bg-cream-2 p-4">
-                  <div className="relative flex aspect-[4/3] shrink-0 items-center justify-center overflow-hidden rounded-2xl bg-cream">
+                  {/* bg matches the studio backdrop baked into /jela/*.webp */}
+                  <div className="relative flex aspect-[4/3] shrink-0 items-center justify-center overflow-hidden rounded-2xl bg-[#e2dac4]">
                     {image ? (
                       <Image
                         src={image}
                         alt={item.name}
                         fill
-                        sizes="(min-width: 768px) 31vw, 78vw"
+                        sizes="(min-width: 1024px) 31vw, (min-width: 640px) 46vw, 90vw"
                         className="object-cover"
                       />
                     ) : (
@@ -89,15 +88,17 @@ export function Menu() {
                     )}
                   </div>
 
-                  <div className="px-2 pb-2">
-                    <h3 className="font-display text-xl leading-tight tracking-tight">
-                      {item.name}
-                    </h3>
-                    <p className="mt-1 text-[10px] font-bold uppercase tracking-wide text-ink-soft/70">
-                      {tagline}
-                    </p>
+                  <div className="flex flex-1 flex-col justify-between gap-3 px-2 pb-2">
+                    <div>
+                      <h3 className="font-display text-xl leading-tight tracking-tight">
+                        {item.name}
+                      </h3>
+                      <p className="mt-1 text-[10px] font-bold uppercase tracking-wide text-ink-soft/70">
+                        {tagline}
+                      </p>
+                    </div>
 
-                    <div className="mt-3 flex items-baseline justify-between border-t border-ink/10 pt-3">
+                    <div className="flex items-baseline justify-between border-t border-ink/10 pt-3">
                       <span className="text-[10px] font-bold tracking-wide text-ink-soft/70">
                         {item.unit ??
                           (item.priceLarge ? "MALA / VELIKA" : "KOM.")}

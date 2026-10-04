@@ -58,7 +58,7 @@ export default function MeniPage() {
         <section className="px-6 pt-14 pb-10 md:px-10 md:pt-20">
           <Reveal>
             <p className="mb-4 text-xs font-bold tracking-[0.2em] text-ink-soft">
-              [ CENOVNIK ]
+              CENOVNIK
             </p>
           </Reveal>
           <Reveal delay={0.1}>
@@ -89,33 +89,24 @@ export default function MeniPage() {
         </nav>
 
         {menu.map((section, i) => {
-          const dark = section.id === "po-kg";
           return (
             <section
               key={section.id}
               id={section.id}
               className={`scroll-mt-32 px-6 py-12 md:px-10 md:py-16 ${
-                dark ? "bg-ink text-cream" : i % 2 === 1 ? "bg-cream-2" : ""
+                i % 2 === 1 ? "bg-cream-2" : ""
               }`}
             >
               <div className="mx-auto max-w-3xl">
                 <Reveal>
-                  <h2
-                    className={`font-display text-2xl tracking-tight md:text-3xl ${
-                      dark ? "text-yellow" : ""
-                    }`}
-                  >
+                  <h2 className="font-display text-2xl tracking-tight md:text-3xl">
                     {section.title}
                   </h2>
                 </Reveal>
 
                 {section.note && (
                   <Reveal delay={0.05}>
-                    <p
-                      className={`mt-2 text-[10px] font-bold uppercase tracking-wide md:text-xs ${
-                        dark ? "text-cream/60" : "text-ink-soft/70"
-                      }`}
-                    >
+                    <p className="mt-2 text-[10px] font-bold uppercase tracking-wide text-ink-soft/70 md:text-xs">
                       {section.note}
                     </p>
                   </Reveal>
@@ -131,11 +122,7 @@ export default function MeniPage() {
                 )}
 
                 <Reveal delay={0.1}>
-                  <ul
-                    className={`mt-4 divide-y ${
-                      dark ? "divide-cream/10" : "divide-ink/10"
-                    }`}
-                  >
+                  <ul className="mt-4 divide-y divide-ink/10">
                     {section.items.map((item, idx) => (
                       <Row
                         key={`${item.name}-${item.unit ?? idx}`}
@@ -152,21 +139,21 @@ export default function MeniPage() {
 
         <section
           id="kontakt"
-          className="scroll-mt-32 bg-ink-soft px-6 py-16 text-cream md:px-10 md:py-20"
+          className="scroll-mt-32 bg-cream px-6 py-16 text-ink md:px-10 md:py-20"
         >
           <div className="mx-auto grid max-w-3xl gap-8 md:grid-cols-2">
             <Reveal>
-              <h2 className="font-display text-3xl leading-[0.95] tracking-tight text-yellow md:text-4xl">
+              <h2 className="font-display text-3xl leading-[0.95] tracking-tight md:text-4xl">
                 KETERING ZA SVAKU PRILIKU.
               </h2>
-              <p className="mt-4 text-xs font-bold uppercase leading-relaxed tracking-wide text-cream/80">
+              <p className="mt-4 text-xs font-bold uppercase leading-relaxed tracking-wide text-ink-soft">
                 {contact.catering}
               </p>
             </Reveal>
 
             <Reveal delay={0.1} className="flex flex-col gap-4">
               <div>
-                <p className="text-[10px] font-bold tracking-[0.2em] text-cream/70">
+                <p className="text-[10px] font-bold tracking-[0.2em] text-ink-soft/70">
                   TELEFONI ZA DOSTAVU
                 </p>
                 <div className="mt-2 flex flex-col gap-2">
@@ -181,17 +168,17 @@ export default function MeniPage() {
                   ))}
                 </div>
               </div>
-              <div className="text-xs font-bold uppercase tracking-wide text-cream/80">
+              <div className="text-xs font-bold uppercase tracking-wide text-ink-soft">
                 <a
                   href={contact.mapsUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="underline decoration-cream/30 underline-offset-4 transition-colors duration-150 hover:text-yellow"
+                  className="underline decoration-ink/30 underline-offset-4 transition-colors duration-150 hover:decoration-ink"
                 >
                   {contact.address}
                 </a>
                 <p className="mt-1">{contact.hours}</p>
-                <p className="mt-1 text-cream/70">{contact.closed}</p>
+                <p className="mt-1 text-ink-soft/70">{contact.closed}</p>
               </div>
             </Reveal>
           </div>
