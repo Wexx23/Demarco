@@ -93,9 +93,11 @@ export function Menu() {
                       <h3 className="font-display text-xl leading-tight tracking-tight">
                         {item.name}
                       </h3>
-                      <p className="mt-1 text-[10px] font-bold uppercase tracking-wide text-ink-soft/70">
-                        {tagline}
-                      </p>
+                      {tagline && (
+                        <p className="mt-1 text-[10px] font-bold uppercase tracking-wide text-ink-soft/70">
+                          {tagline}
+                        </p>
+                      )}
                     </div>
 
                     <div className="flex items-baseline justify-between border-t border-ink/10 pt-3">

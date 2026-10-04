@@ -222,7 +222,7 @@ export const menu: MenuSection[] = [
       { name: "Pomfrit manji", unit: "200 g", price: 200 },
       { name: "Pomfrit veći", unit: "300 g", price: 250 },
       { name: "Pomfrit sa sirom", price: 300 },
-      { name: "Šampinjoni na žaru", price: 380 },
+      { name: "Šampinjoni na roštilju", price: 380 },
       { name: "Pohovani kačkavalj", price: 450 },
     ],
   },
@@ -270,19 +270,18 @@ const pick = (sectionId: string, name: string, unit?: string): MenuItem => {
 // Da dodaš fotografiju: ubaci fajl u public/jela/ i upiši putanju u `image`.
 export const featured: {
   key: string;
-  tagline: string;
+  tagline?: string;
   image?: string;
   item: MenuItem;
 }[] = [
   {
     key: "pljeskavica",
-    tagline: "Punjena kajmakom, sa žara",
+    tagline: "Punjena kajmakom, sa roštilja",
     image: "/jela/pljeskavica.webp",
     item: pick("rostilj", "Punjena pljeskavica DeMarco"),
   },
   {
     key: "cevapi",
-    tagline: "Domaći, sa lukom i ajvarom",
     image: "/jela/cevapi.webp",
     item: pick("rostilj", "Ćevapi"),
   },
@@ -294,7 +293,7 @@ export const featured: {
   },
   {
     key: "ustipci",
-    tagline: "Prženi, hrskavi spolja",
+    tagline: "10 komada",
     image: "/jela/ustipci.webp",
     item: pick("rostilj", "Uštipci"),
   },
