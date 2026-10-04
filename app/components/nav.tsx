@@ -2,6 +2,7 @@
 
 import { AnimatePresence, motion, useReducedMotion } from "motion/react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { contact } from "../menu-data";
 import { CutleryMark } from "./icons";
@@ -18,12 +19,18 @@ const links = [
 ];
 
 export function Nav() {
-  const [open, setOpen] = useState(false);
+  const pathname = usePathname();
+  // The menu belongs to the page it was opened on. Following a link to another
+  // page keeps it covering the screen until the new page has rendered, then it
+  // fades out over that page, so the old page never flashes through.
+  const [openOn, setOpenOn] = useState<string | null>(null);
+  const open = openOn === pathname;
+  const close = () => setOpenOn(null);
   const reduceMotion = useReducedMotion();
 
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
-      if (e.key === "Escape") setOpen(false);
+      if (e.key === "Escape") close();
     };
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
@@ -69,7 +76,7 @@ export function Nav() {
 
         <button
           type="button"
-          onClick={() => setOpen((v) => !v)}
+          onClick={() => setOpenOn(open ? null : pathname)}
           aria-expanded={open}
           aria-label={open ? "Zatvori meni" : "Otvori meni"}
           className="relative z-50 flex h-10 w-10 items-center justify-center rounded-full bg-ink text-cream transition-transform duration-150 active:scale-[0.94] md:hidden"
@@ -99,7 +106,10 @@ export function Nav() {
             <motion.nav
               initial={{ opacity: 0, y: -12 }}
               animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -12 }}
+              exit={{
+                opacity: 0,
+                transition: { duration: reduceMotion ? 0 : 0.2, ease: "easeOut" },
+              }}
               transition={{ duration: reduceMotion ? 0 : 0.22, ease: EASE_OUT }}
               className="absolute left-0 right-0 top-full z-40 flex h-[calc(100dvh-100%)] flex-col border-t border-ink/10 bg-cream px-6 py-8 md:hidden"
             >
@@ -118,7 +128,9 @@ export function Nav() {
                     {href.startsWith("/") ? (
                       <Link
                         href={href}
-                        onClick={() => setOpen(false)}
+                        onClick={() => {
+                          if (href === pathname) close();
+                        }}
                         className="block w-fit font-display text-4xl leading-none tracking-tight"
                       >
                         {label}
@@ -126,7 +138,7 @@ export function Nav() {
                     ) : (
                       <a
                         href={href}
-                        onClick={() => setOpen(false)}
+                        onClick={close}
                         className="block w-fit font-display text-4xl leading-none tracking-tight"
                       >
                         {label}

@@ -6,7 +6,7 @@ import type { ReactNode } from "react";
 const EASE_OUT: [number, number, number, number] = [0.16, 1, 0.3, 1];
 
 const variants: Variants = {
-  hidden: { opacity: 0, y: 24 },
+  hidden: { opacity: 0, y: 16 },
   visible: { opacity: 1, y: 0 },
 };
 
@@ -26,7 +26,7 @@ export function Reveal({
       whileInView="visible"
       viewport={{ once: true, margin: "-80px" }}
       variants={variants}
-      transition={{ duration: 0.6, ease: EASE_OUT, delay }}
+      transition={{ duration: 0.45, ease: EASE_OUT, delay }}
     >
       {children}
     </motion.div>
