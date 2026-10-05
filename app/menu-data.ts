@@ -282,6 +282,7 @@ export const featured: {
   },
   {
     key: "cevapi",
+    tagline: "Leskovački ćevapi",
     image: "/jela/cevapi.webp",
     item: pick("rostilj", "Ćevapi"),
   },
